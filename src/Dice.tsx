@@ -17,24 +17,31 @@ export default function Dice({ count }: { count: number }) {
         setWin(false);
     }
     useEffect(() => {
-        newGame();
-    },[count]);
+        newGame()
+        if (checkWin(dice)) {
+            setWin(true)
+        }
+    }, [])
 
-
+   
     function checkWin(dice: Die[]) {
-        const val=dice[0].value
-        for (const die of dice){
-            if (die.value !== val) {
+        const v = dice.map(die => die.value)
+        console.log(`checking for win: ${v}`)
+        let i = v.length-1;
+        const val=v[0]
+        while (i>0){
+            if (v[i] !== val) {
                 return false;
             }
+            i--;
         }
+        console.log(`win for ${v}`);
         return true;        
     }
 
     function rollDice() {
         if (win) {
-            setWin(false);
-            setRolls(0);
+            newGame();
         } else {
             setRolls(rolls => rolls + 1);
             setDice(dice.map((die) => (die.pinned ? die : { ...die, value: Math.floor(Math.random() * 6) + 1 })));
@@ -49,7 +56,7 @@ export default function Dice({ count }: { count: number }) {
             <button key={index} className={`die ${die.pinned ? 'active' : ''}`} onClick={() => {
                 setDice(dice.map((d, i) => i === index ? { ...d, pinned: !d.pinned } : d));
             }}>
-                <img src={`/${die.value}.svg`} alt={`${die.value} die`} />
+                {die.value}
             </button>
         ))}
     </div><p>Rolls: {rolls}</p>
