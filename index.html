@@ -7,10 +7,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/3.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css">
+    <script src="src/dice.ts" type="module" defer></script>
     <title>Tenzies</title>
   </head>
   <body>
-    <main id="root"></main>
-    <script type="module" src="/src/main.tsx"></script>
+    <main id="root">
+      <h1>Tenzies</h1>
+      <div class="instructions">
+        <p>Roll until all dice are the same. 
+          Click each die to pin it at its current value between rolls.</p>
+      </div>
+      <div id="dice-container" class="dice">
+        <button class="die">1</button>
+        <button class="die">2</button>
+        <button class="die">3</button>
+        <button class="die">4</button>
+        <button class="die">5</button>
+        <button class="die">6</button>
+        <button class="die">6</button>
+        <button class="die">5</button>
+        <button class="die">4</button>
+        <button class="die">3</button>
+      </div>
+      <div class="buttons">
+        <button id="roll-dice">Roll</button>
+        <p id="roll-count">Rolls: 0</p>
+        <p id="win-message">You win!</p>
+      </div>
+    </main>
   </body>
 </html>
