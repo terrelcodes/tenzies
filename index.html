@@ -1,40 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="/3.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/index.css">
-    <script src="src/dice.ts" type="module" defer></script>
-    <title>Tenzies</title>
-  </head>
-  <body>
-    <main id="root">
-      <h1>Tenzies</h1>
-      <div class="instructions">
-        <p>Roll until all dice are the same. 
-          Click each die to pin it at its current value between rolls.</p>
-      </div>
-      <div id="dice-container" class="dice">
-        <button class="die">1</button>
-        <button class="die">2</button>
-        <button class="die">3</button>
-        <button class="die">4</button>
-        <button class="die">5</button>
-        <button class="die">6</button>
-        <button class="die">6</button>
-        <button class="die">5</button>
-        <button class="die">4</button>
-        <button class="die">3</button>
-      </div>
-      <div class="buttons">
-        <button id="roll-dice">Roll</button>
-        <p id="roll-count">Rolls: 0</p>
-        <p id="win-message">You win!</p>
-      </div>
-    </main>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/3.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/index.css">
+  <script src="src/dice.ts" type="module" defer></script>
+  <title>Tenzies</title>
+</head>
+
+<body>
+  <main id="root">
+    <h1>Tenzies</h1>
+    <div class="instructions">
+      <p>Roll until all dice are the same.
+        Click each die to pin it at its current value.</p>
+    </div>
+    <div id="dice-container" class="dice" aria-live="polite">
+      <button class="die"><img src="/1.svg" alt="1" /></button>
+      <button class="die"><img src="/2.svg" alt="2" /></button>
+      <button class="die"><img src="/3.svg" alt="3" /></button>
+      <button class="die"><img src="/4.svg" alt="4" /></button>
+      <button class="die"><img src="/5.svg" alt="5" /></button>
+      <button class="die"><img src="/6.svg" alt="6" /></button>
+      <button class="die"><img src="/6.svg" alt="6" /></button>
+      <button class="die"><img src="/5.svg" alt="5" /></button>
+      <button class="die"><img src="/4.svg" alt="4" /></button>
+      <button class="die"><img src="/3.svg" alt="3" /></button>
+    </div>
+    <div class="buttons">
+      <button  aria-live="polite" id="roll-button">Roll</button>
+      <p aria-live="polite">Rolls: <span id="roll-count">0</span></p>
+      <p id="win-message" aria-live="polite">You win!</p>
+    </div>
+  </main>
+</body>
+
 </html>

@@ -15,15 +15,16 @@ body {
 
 main {
   background-color: #F5F5F5;
-  height: 400px;
-  max-width: 400px;
+
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
+h1 {
+  margin: 0;
+}
 button {
   background-color: #5035ff;
   font-weight: bold;
@@ -34,7 +35,46 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+
 .buttons {
   display: flex;
   gap: 1rem;
+}
+
+.dice {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.die {
+  width: 50px;
+  height: 50px;
+  padding: .25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.die:hover {
+  transform: scale(1.05);
+}
+
+.die:active {
+  transform: scale(0.95);
+}
+
+.die img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.die.held {
+  background-color: #59E391;
 }
